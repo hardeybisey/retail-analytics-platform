@@ -1,0 +1,99 @@
+version: 2
+
+sources:
+  - name: product
+    database: retail_analytics  
+    schema: product  
+    tables:
+      - name: product
+        description: >
+          "Product information table"
+        columns: 
+          - name: id
+            description: integer
+            tests:
+              - unique
+              - not_null
+          - name: subcategory_id
+            description: integer
+          - name: sku_no
+            description: varchar
+            tests:
+              - not_null
+          - name: name
+            description: varchar
+            tests:
+              - not_null
+          - name: color
+            description: varchar
+          - name: cost_price
+            description: numeric
+            tests:
+              - not_null
+          - name: list_price
+            description: numeric
+            tests:
+              - not_null
+          - name: weight
+            description: numeric
+          - name: class
+            description: varchar
+          - name: product_line
+            description: varchar
+          - name: stock_level
+            description: smallint
+            tests:
+              - not_null
+          - name: reorder_threshold
+            description: smallint
+            tests:
+              - not_null
+          - name: created_date
+            description: timestamp
+            tests:
+              - not_null
+          - name: modified_date
+            description: timestamp
+
+      - name: category
+        description: >
+          "product category information table"
+        columns: 
+          - name: id
+            description: integer
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: varchar
+            tests:
+              - not_null
+          - name: created_date
+            description: timestamp
+            tests:
+              - not_null
+          - name: modified_date
+            description: timestamp
+
+
+      - name: subcategory
+        description: >
+          "product subcategory information table"
+        columns: 
+          - name: id
+            description: integer
+            tests:
+              - unique
+              - not_null
+          - name: category_id
+            description: integer
+            tests:
+              - not_null
+          - name: name
+            description: varchar
+          - name: created_date
+            description: timestamp
+            tests:
+              - not_null
+          - name: modified_date
+            description: timestamp

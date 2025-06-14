@@ -1,0 +1,57 @@
+version: 2
+
+sources:
+  - name: date
+    database: retail_analytics  
+    schema: date  
+    tables:
+      - name: date
+        description: >
+          ""
+        columns: 
+          - name: date_key
+            description: integer
+          - name: full_date
+            description: date
+          - name: day_of_week
+            description: integer
+          - name: day_num_in_month
+            description: integer
+          - name: day_num_overall
+            description: integer
+          - name: day_name
+            description: varchar
+          - name: day_abbrev
+            description: varchar
+          - name: weekday_flag
+            description: varchar
+          - name: week_num_in_year
+            description: integer
+          - name: week_num_overall
+            description: integer
+          - name: week_begin_date
+            description: date
+          - name: week_begin_date_key
+            description: varchar
+          - name: month
+            description: integer
+          - name: month_num_overall
+            description: integer
+          - name: month_name
+            description: varchar
+          - name: month_abbrev
+            description: varchar
+          - name: quarter
+            description: integer
+          - name: year
+            description: integer
+          - name: yearmo
+            description: varchar
+          - name: fiscal_month
+            description: integer
+          - name: fiscal_quarter
+            description: integer
+          - name: fiscal_year
+            description: integer
+          - name: last_day_in_month_flag
+            description: varchar

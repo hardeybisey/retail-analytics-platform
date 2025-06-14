@@ -1,0 +1,14 @@
+version: 2 
+
+seeds: 
+  - name: subcategory
+    config: 
+      full_refresh: True
+      database: retail_analytics
+      schema: product
+      column_types: 
+        id: integer
+        category_id: integer
+        name: varchar
+        created_date: timestamp
+        modified_date: timestamp

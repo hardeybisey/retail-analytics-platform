@@ -1,0 +1,3 @@
+*.tsql
+dbt_packages/
+target/

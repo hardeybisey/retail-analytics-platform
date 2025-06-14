@@ -1,0 +1,182 @@
+id,name,country_iso_code,state_province_code
+1,Alberta,CA,AB 
+2,Alaska,US,AK 
+3,Alabama,US,AL 
+4,Arkansas,US,AR 
+5,American Samoa,AS,AS 
+6,Arizona,US,AZ 
+7,British Columbia,CA,BC 
+8,Bayern,DE,BY 
+9,California,US,CA 
+10,Colorado,US,CO 
+11,Connecticut,US,CT 
+12,District of Columbia,US,DC 
+13,Delaware,US,DE 
+14,England,GB,ENG
+15,Florida,US,FL 
+16,Micronesia,FM,FM 
+17,Georgia,US,GA 
+18,Guam,US,GU 
+19,Hessen,DE,HE 
+20,Hamburg,DE,HH 
+21,Hawaii,US,HI 
+22,Iowa,US,IA 
+23,Idaho,US,ID 
+24,Illinois,US,IL 
+25,Indiana,US,IN 
+26,Kansas,US,KS 
+27,Kentucky,US,KY 
+28,Louisiana,US,LA 
+29,Labrador,CA,LB 
+30,Massachusetts,US,MA 
+31,Manitoba,CA,MB 
+32,Maryland,US,MD 
+33,Maine,US,ME 
+34,Marshall Islands,MH,MH 
+35,Michigan,US,MI 
+36,Minnesota,US,MN 
+37,Missouri,US,MO 
+38,Northern Mariana Islands,MP,MP 
+39,Mississippi,US,MS 
+40,Montana,US,MT 
+41,Brunswick,CA,NB 
+42,North Carolina,US,NC 
+43,North Dakota,US,ND 
+44,Nebraska,US,NE 
+45,Newfoundland,CA,NF 
+46,New Hampshire,US,NH 
+47,New Jersey,US,NJ 
+48,New Mexico,US,NM 
+49,Nova Scotia,CA,NS 
+50,New South Wales,AU,NSW
+51,Northwest Territories,CA,NT 
+52,Nevada,US,NV 
+53,Nordrhein-Westfalen,DE,NW 
+54,New York,US,NY 
+55,Ohio,US,OH 
+56,Oklahoma,US,OK 
+57,Ontario,CA,ON 
+58,Oregon,US,OR 
+59,Pennsylvania,US,PA 
+60,Prince Edward Island,CA,PE 
+61,Puerto Rico,US,PR 
+62,Palau,PW,PW 
+63,Quebec,CA,QC 
+64,Queensland,AU,QLD
+65,Rhode Island,US,RI 
+66,South Australia,AU,SA 
+67,South Carolina,US,SC 
+68,South Dakota,US,SD 
+69,Saskatchewan,CA,SK 
+70,Saarland,DE,SL 
+71,Tasmania,AU,TAS
+72,Tennessee,US,TN 
+73,Texas,US,TX 
+74,Utah,US,UT 
+75,Virginia,US,VA 
+76,Virgin Islands,VI,VI 
+77,Victoria,AU,VIC
+78,Vermont,US,VT 
+79,Washington,US,WA 
+80,Wisconsin,US,WI 
+81,West Virginia,US,WV 
+82,Wyoming,US,WY 
+83,Yukon Territory,CA,YT 
+84,France,FR,FR 
+85,Brandenburg,DE,BB 
+86,Saxony,DE,SN 
+87,Ain,FR,01 
+88,Aisne,FR,02 
+89,Allier,FR,03 
+90,Alpes-de-Haute Provence,FR,04 
+91,Alpes (Haute),FR,05 
+92,Alpes-Maritimes,FR,06 
+93,ArdÃ¨che,FR,07 
+94,Ardennes,FR,08 
+95,AriÃ¨ge,FR,09 
+96,Aube,FR,10 
+97,Aude,FR,11 
+98,Aveyron,FR,12 
+99,Bouches du RhÃ´ne,FR,13 
+100,Calvados,FR,14 
+101,Cantal,FR,15 
+102,Charente,FR,16 
+103,Charente-Maritime,FR,17 
+104,Cher,FR,18 
+105,CorrÃ¨ze,FR,19 
+106,Corse,FR,20 
+107,CÃ´te d'Or,FR,21 
+108,CÃ´tes-d'Armor,FR,22 
+109,Creuse,FR,23 
+110,Dordogne,FR,24 
+111,Toubs,FR,25 
+112,DrÃ´me,FR,26 
+113,Eure,FR,27 
+114,Eure et Loir,FR,28 
+115,FinistÃ¨re,FR,29 
+116,Gard,FR,30 
+117,Garonne (Haute),FR,31 
+118,Gers,FR,32 
+119,Gironde,FR,33 
+120,HÃ©rault,FR,34 
+121,Ille et Vilaine,FR,35 
+122,Indre,FR,36 
+123,Indre et Loire,FR,37 
+124,IsÃ¨re,FR,38 
+125,Jura,FR,39 
+126,Landes,FR,40 
+127,Loir et Cher,FR,41 
+128,Loire,FR,42 
+129,Loire (Haute),FR,43 
+130,Loire Atlantique,FR,44 
+131,Loiret,FR,45 
+132,Lot,FR,46 
+133,Lot et Garonne,FR,47 
+134,LozÃ¨re,FR,48 
+135,Maine et Loire,FR,49 
+136,Manche,FR,50 
+137,Marne,FR,51 
+138,Marne (Haute),FR,52 
+139,Mayenne,FR,53 
+140,Meurthe et Moselle,FR,54 
+141,Meuse,FR,55 
+142,Morbihan,FR,56 
+143,Moselle,FR,57 
+144,NiÃ¨vre,FR,58 
+145,Nord,FR,59 
+146,Oise,FR,60 
+147,Orne,FR,61 
+148,Pas de Calais,FR,62 
+149,Puy de DÃ´me,FR,63 
+150,PyrÃ©nÃ©es Atlantiques,FR,64 
+151,PyrÃ©nÃ©es (Hautes),FR,65 
+152,PyrÃ©nÃ©es Orientales,FR,66 
+153,Rhin (Bas),FR,67 
+154,Rhin (Haut),FR,68 
+155,RhÃ´ne,FR,69 
+156,SaÃ´ne (Haute),FR,70 
+157,SaÃ´ne et Loire,FR,71 
+158,Sarthe,FR,72 
+159,Savoie,FR,73 
+160,Savoie Haute,FR,74 
+161,Seine (Paris),FR,75 
+162,Seine Maritime,FR,76 
+163,Seine et Marne,FR,77 
+164,Yveline,FR,78 
+165,SÃ¨vres (Deux),FR,79 
+166,Somme,FR,80 
+167,Tarne,FR,81 
+168,Tarne et Garonne,FR,82 
+169,Var,FR,83 
+170,Vaucluse,FR,84 
+171,La VendÃ©e,FR,85 
+172,Vienne,FR,86 
+173,Vienne (Haute),FR,87 
+174,Vosges,FR,88 
+175,Yonne,FR,89 
+176,Belford (Territoire de),FR,90 
+177,Essonne,FR,91 
+178,Hauts de Seine,FR,92 
+179,Seine Saint Denis,FR,93 
+180,Val de Marne,FR,94 
+181,Val d'Oise,FR,95 

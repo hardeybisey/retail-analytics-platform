@@ -1,0 +1,86 @@
+// Product Domain
+Table dim_address {
+    address_id integer [primary key]
+    address_line1 varchar
+    address_line2 varchar
+    city varchar 
+    postal_code varchar
+    state_province_code varchar
+    country_iso_code varchar
+    country_name varchar
+    address_created_at timestamp
+    address_updated_at timestamp
+}
+
+Table dim_customer {
+    customer_id integer [primary key]
+    customer_address_id integer
+    first_name varchar
+    middle_name varchar 
+    last_name varchar
+    email varchar
+    gender varchar
+    customer_created_at timestamp
+    customer_updated_at timestamp
+}
+
+
+Table dim_product {
+    product_id integer [primary key]
+    product_name varchar
+    product_sku_no varchar
+    product_cost numeric
+    product_list_price numeric
+    product_stock_level numeric
+    product_reorder_threshold smallint
+    product_category_name varchar
+    product_subcategory_name varchar
+    product_created_at timestamp
+    product_updated_at timestamp
+}
+
+Table dim_date {
+    date_key integer [primary key]
+    full_date date
+    day_of_week integer
+    day_num_in_month integer
+    day_num_overall integer
+    day_name varchar
+    day_abbrev varchar
+    weekday_flag varchar
+    week_num_in_year integer
+    week_num_overall integer
+    week_begin_date date
+    week_begin_date_key varchar
+    month integer
+    month_num_overall integer
+    month_name varchar
+    month_abbrev varchar
+    quarter integer
+    year integer
+    yearmo varchar
+    fiscal_month integer
+    fiscal_quarter integer
+    fiscal_year integer
+    last_day_in_month_flag varchar
+}
+
+Table fct_transaction {
+    id integer [primary key]
+    order_id integer 
+    order_detail_id integer 
+    date_key ineteger [ref: - dim_date.date_key]
+    customer_id integer [ref: - dim_customer.customer_id]
+    product_id integer [ref: - dim_product.product_id]
+
+    shipping_address_id integer [ref: - dim_address.address_id]
+    billing_address_id integer [ref: - dim_address.address_id]
+
+    order_due_date timestamp
+    order_status varchar
+    unit_price float
+
+    unit_price_discount float
+    shipping_cost_allocated floar
+    tax_cost_allocated float
+}

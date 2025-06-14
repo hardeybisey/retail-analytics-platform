@@ -1,0 +1,19 @@
+version: 2 
+
+seeds: 
+  - name: address
+    config: 
+      schema: customer
+      full_refresh: True
+      database: retail_analytics
+      column_types: 
+        id: integer
+        state_id: integer
+        address_line1: varchar
+        address_line2: varchar
+        city: varchar 
+        postal_code: varchar
+        created_date: timestamp
+        modified_date: timestamp
+        address_type: varchar
+
