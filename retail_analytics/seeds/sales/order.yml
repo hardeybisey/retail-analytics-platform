@@ -1,0 +1,24 @@
+version: 2 
+
+seeds: 
+  - name: order
+    description: contains sales data 
+    config: 
+      full_refresh: True
+      database: retail_analytics
+      schema: sales
+      column_types: 
+        id: integer
+        customer_id: integer
+        shipping_address_id: integer
+        billing_address_id: integer
+        order_date: timestamp
+        modified_date: timestamp
+        ship_date: timestamp
+        due_date: timestamp
+        credit_card_id: integer
+        order_total: float
+        order_status: varchar
+        shipping_cost: float
+        tax_due: float
+        total_due: float

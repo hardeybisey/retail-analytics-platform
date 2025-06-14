@@ -1,0 +1,19 @@
+version: 2 
+
+seeds: 
+  - name: customer
+    config: 
+      full_refresh: True
+      database: retail_analytics
+      schema: customer
+      column_types: 
+        id: integer
+        address_id: integer
+        title: varchar
+        first_name: varchar
+        middle_name: varchar 
+        last_name: varchar
+        email: varchar
+        gender: varchar
+        created_date: timestamp
+        modified_date: timestamp

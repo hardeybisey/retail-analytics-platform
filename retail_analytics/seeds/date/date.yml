@@ -1,0 +1,32 @@
+version: 2 
+
+seeds: 
+  - name: date
+    config: 
+      full_refresh: True
+      database: retail_analytics
+      schema: date
+      column_types: 
+        date_key: integer
+        full_date: date
+        day_of_week: integer
+        day_num_in_month: integer
+        day_num_overall: integer
+        day_name: varchar
+        day_abbrev: varchar
+        weekday_flag: varchar
+        week_num_in_year: integer
+        week_num_overall: integer
+        week_begin_date: date
+        week_begin_date_key: varchar
+        month: integer
+        month_num_overall: integer
+        month_name: varchar
+        month_abbrev: varchar
+        quarter: integer
+        year: integer
+        yearmo: varchar
+        fiscal_month: integer
+        fiscal_quarter: integer
+        fiscal_year: integer
+        last_day_in_month_flag: varchar

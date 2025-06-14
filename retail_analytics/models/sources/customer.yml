@@ -1,0 +1,107 @@
+version: 2
+
+sources:
+  - name: customer
+    database: retail_analytics  
+    schema: customer  
+    tables:
+      - name: customer
+        description: >
+          "Customer information table"
+        columns:
+          - name: id
+            description: integer
+            tests:
+              - unique
+              - not_null
+          - name: address_id
+            description: integer
+            tests:
+              - not_null
+          - name: title
+            description: varchar
+          - name: first_name
+            description: varchar
+          - name: middle_name
+            description: varchar 
+          - name: last_name
+            description: varchar
+          - name: email
+            description: varchar
+            tests:
+              - unique
+              - not_null
+          - name: gender
+            description: varchar
+          - name: created_date
+            description: timestamp
+            tests:
+              - not_null
+          - name: modified_date
+            description: timestamp
+
+      - name: address
+        description: >
+          "Customer address table"
+        columns: 
+          - name: id
+            description: integer
+            tests:
+              - unique
+              - not_null
+          - name: state_id
+            description: integer
+            tests:
+              - not_null
+          - name: address_line1
+            description: integer
+          - name: address_line2 
+            description: varchar
+          - name: city
+            description: varchar 
+          - name: postal_code
+            description: varchar
+          - name: created_date
+            description: timestamp
+            tests:
+              - not_null
+          - name: modified_date
+            description: timestamp
+          - name: address_type
+            description: varchar
+            tests:
+              - not_null
+            
+      - name: state
+        description: >
+          "State information table"
+        columns: 
+          - name: id
+            description: integer
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: varchar
+          - name: country_iso_code
+            description: varchar
+            tests:
+              - not_null
+          - name: state_province_code
+            description: varchar
+            tests:
+              - not_null
+         
+      - name: country
+        description: >
+          "Country information table"
+        columns: 
+          - name: iso_code
+            description: varchar
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: varchar
+            tests:
+              - not_null

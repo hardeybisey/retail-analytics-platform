@@ -1,0 +1,13 @@
+version: 2 
+
+seeds: 
+  - name: state
+    config: 
+      full_refresh: True
+      database: retail_analytics
+      schema: customer
+      column_types: 
+        id: integer
+        name: varchar
+        country_iso_code: varchar
+        state_province_code: varchar

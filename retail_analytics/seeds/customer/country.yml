@@ -1,0 +1,11 @@
+version: 2 
+
+seeds: 
+  - name: country
+    config: 
+      full_refresh: True
+      database: retail_analytics
+      schema: customer
+      column_types: 
+        iso_code: varchar
+        name: varchar

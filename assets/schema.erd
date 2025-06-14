@@ -1,0 +1,174 @@
+// Product Domain
+
+Table product {
+  id integer [primary key]
+  name varchar 
+  sku_no varchar
+  cost_price float 
+  list_price float
+  description varchar
+  is_active bool
+  weight float
+  productline str
+  daystomanufacture 
+  weightunitmeasurecode
+  is_promoted bool
+  category_id integer [ref: > product_category.id]
+  subcategory_id integer [ref: > product_subcategory.id]
+  return_policy_id float [ref: > return_policy.id]
+  created_date timestamp
+  modified_date timestamp
+}
+Table product_subcategory {
+  id integer [primary key]
+  name varchar
+  category_id integer [ref: > product_category.id]
+  created_date timestamp
+}
+Table product_category {
+  id integer [primary key]
+  name varchar [not null]
+}
+
+Table return_policy {
+  id integer [primary key]
+  returnable bool
+  return_window_days integer
+  restocking_fee float
+}
+
+// Customer Domain
+Table customer {
+  id integer [primary key]
+  title varchar
+  first_name varchar
+  middle_name varchar
+  last_name varchar 
+  email varchar
+  gender varchar
+  address_id integer [ref: - address.id]
+  created_date timestamp
+  modified_date timestamp
+}
+
+Table customer_address {
+  customer_id integer [ref: > customer.id]
+  address_id integer [ref: > address.id]
+  address_type varchar [note: 'billing, shipping, both']
+  is_default bool
+}
+
+
+Table address {
+  id integer [primary key]
+  addressline1 varchar
+  addressline2 varchar
+  city varchar [not null]
+  postcode varchar
+  address_type varchar  [note: 'Billing, Shipping']
+  modifieddate datetime
+  state_id varchar  [ref: > state.id]
+ // country_id varchar [ref: > country.id]
+}
+Table state {
+  id integer [primary key]
+  name varchar [not null]
+  state_province_code varchar [not null]
+  country_iso_code integer [ref: > country.iso_code]
+}
+ Table country {
+  name varchar [not null]
+  iso_code varchar [primary key]
+}
+
+//Table region {
+//  id integer [primary key]
+//name varchar [not null]
+// }
+
+// Order and Transaction Domain
+Table order {
+  id integer [primary key]
+  customer_id integer [ref: > customer.id]
+  order_date timestamp 
+  modified_date
+  ship_date 
+  due_date
+  order_total
+  shipping_cost
+  tax_due
+  total_due
+  credit_card_id integer [ref: > card_information.id]
+  shipping_address_id integer [ref: > address.id]
+  billing_address_id integer [ref: > address.id]
+}
+Table order_detail {
+  id integer [primary key]
+  order_id integer [ref: > order.id]
+  product_id integer [ref: > product.id]
+  quantity integer
+  unit_price float
+  unit_price_discount float
+  created_date
+  modified_date
+}
+
+
+Table payment_method {
+  id integer [primary key]
+  name varchar [note: 'CC, PayPal, Apple Pay, Klarna, Coupon']
+}
+
+Table shipping_method {
+  id integer [primary key]
+  method_name varchar [note: 'standard, express, next day']
+  carrier_id integer [ref: > shipping_carrier.id]
+  estimated_days integer
+  cost float
+}
+
+Table shipping_carrier {
+  id integer [primary key]
+  name varchar [note: 'fedex, amazon, ups']
+}
+
+
+Table card_information {
+  id integer [primary key]
+  customer_id integer [ref: > customer.id]
+  payment_provider_id integer [ref: > payment_method.id]
+  card_type varchar
+  last_four_digits integer
+  expiry_month integer
+  expiry_year integer
+}
+
+
+// Order and Transaction Domain
+Table fulfillment_centre {
+  id integer [primary key]
+  name varchar [not null]
+  address_id integer [ref: - address.id]
+  capacity integer
+  is_active bool
+}
+
+Table inventory {
+  id integer [primary key]
+  product_id integer [ref: > product.id]
+  centre_id integer [ref: > fulfillment_centre.id]
+  stock_level integer
+  reorder_threshold integer
+  last_updated datetime
+  is_backorderable bool
+}
+
+
+Table inventoty_log {
+  id integer [primary key]
+  product_id integer [ref: > product.id]
+  change_type varchar [note: 'restock, purchase, return']
+  quantity_change integer
+  change_timestamp timestamp
+  reference_order_id integer
+}
