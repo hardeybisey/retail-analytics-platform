@@ -1,0 +1,18 @@
+retail_analytics:
+  outputs:
+    dev:
+      type: duckdb
+      path: ~/Desktop/retail-analytics-platform/data/retail_analytics.db
+      threads: 4
+
+    prod:
+      dbname: mydatabase
+      host: localhost
+      pass: mypassword
+      port: 5432
+      schema: myschema
+      threads: 5
+      type: postgres
+      user: muuser
+
+  target: dev
