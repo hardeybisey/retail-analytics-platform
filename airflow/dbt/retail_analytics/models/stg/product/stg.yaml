@@ -1,0 +1,92 @@
+models:
+  - name: stg_product__product
+    config:
+      alias: stg_product__product{{ var("suffix") }}
+      tags: ["product"]
+    columns:
+      - name: product_id
+        description: integer
+        tests:
+          - unique
+          - not_null
+      - name: product_subcategory_id
+        description: integer
+      - name: product_sku_no
+        description: varchar
+        tests:
+          - not_null
+      - name: product_name
+        description: varchar
+        tests:
+          - not_null
+      - name: product_cost
+        description: numeric
+        tests:
+          - not_null
+      - name: product_list_price
+        description: numeric
+        tests:
+          - not_null
+      - name: product_weight
+        description: numeric
+      - name: product_class
+        description: varchar
+      - name: product_stock_level
+        description: smallint
+        tests:
+          - not_null
+      - name: product_reorder_threshold
+        description: smallint
+        tests:
+          - not_null
+      - name: product_created_at
+        description: timestamp
+        tests:
+          - not_null
+      - name: product_updated_at
+        description: timestamp
+
+  - name: stg_product__category
+    config:
+      alias: stg_product__category{{ var("suffix") }}
+      tags: ["product"]
+    columns:
+      - name: product_category_id
+        description: integer
+        tests:
+          - unique
+          - not_null
+      - name: product_category_name
+        description: varchar
+        tests:
+          - not_null
+      - name: product_category_created_at
+        description: timestamp
+        tests:
+          - not_null
+      - name: product_category_updated_at
+        description: timestamp
+
+
+  - name: stg_product__subcategory
+    config:
+      alias: stg_product__subcategory_{{ var("suffix") }}
+      tags: ["product"]
+    columns:
+      - name: product_subcategory_id
+        description: integer
+        tests:
+          - unique
+          - not_null
+      - name: product_category_id
+        description: integer
+        tests:
+          - not_null
+      - name: product_subcategory_name
+        description: varchar
+      - name: product_subcategory_created_at
+        description: timestamp
+        tests:
+          - not_null
+      - name: product_subcategory_updated_at
+        description: timestamp

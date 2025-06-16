@@ -1,0 +1,40 @@
+services:
+  dbt-postgres:
+    image: postgres:15
+    container_name: dbt_postgres
+    environment:
+      POSTGRES_USER: dbt
+      POSTGRES_PASSWORD: dbt
+      POSTGRES_DB: retail_analytics
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - my_network
+
+
+  scheduler:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - my_network
+
+  triggerer:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - my_network
+
+  dag-processor:
+    networks:
+      - my_network
+    volumes:
+      - ./dbt:/usr/local/airflow/dbt
+
+networks:
+  my_network:
+    driver: bridge
+
+volumes:
+  postgres_data:

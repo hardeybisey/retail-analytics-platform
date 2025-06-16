@@ -1,0 +1,5 @@
+*.tsql
+dbt_packages/
+dbt_modules/
+macros/
+target/

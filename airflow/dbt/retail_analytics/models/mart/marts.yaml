@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: "Product Dimension Table"
+    config:
+      alias: product
+      tags: []
+    columns:
+      - name: product_id
+        description: integer
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: varchar
+        tests:
+          - not_null
+      - name: product_sku_no
+        description: varchar
+        tests:
+          - not_null
+      - name: product_cost
+        description: numeric
+        tests:
+          - not_null
+      - name: product_list_price
+        description: numeric
+        tests:
+          - not_null
+      - name: product_stock_level
+        description: smallint
+        tests:
+          - not_null
+      - name: product_reorder_threshold
+        description: smallint
+        tests:
+          - not_null
+      - name: product_category_name
+        description: integer
+        tests:
+          - not_null
+      - name: product_subcategory_name
+        description: integer
+        tests:
+          - not_null
+      - name: product_created_at
+        description: timestamp
+        tests:
+          - not_null
+      - name: product_updated_at
+        description: timestamp
