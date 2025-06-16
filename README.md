@@ -1,61 +1,71 @@
-# retail-analytics-platform
-Retail Analytics Platform 
+# 🛒 Retail Analytics Platform
 
+**A personal end-to-end data platform project** designed to simulate the architecture, tooling, and workflows of a modern retail analytics stack. This project demonstrates best practices across the full data lifecycle: ingestion, orchestration, transformation, API exposure, and deployment.
 
-Data Source
-This dataset provides an in-depth look at the profitability of e-commerce sales. It contains data on a variety of sales channels, including Shiprocket and INCREFF, as well as financial information on related expenses and profits. The columns contain data such as SKU codes, design numbers, stock levels, product categories, sizes and colors. In addition to this we have included the MRPs across multiple stores like Ajio MRP , Amazon MRP , Amazon FBA MRP , Flipkart MRP , Limeroad MRP Myntra MRP and PaytmMRP along with other key parameters like amount paid by customer for the purchase , rate per piece for every individual transaction Also we have added transactional parameters like Date of sale months category fulfilledby B2b Status Qty Currency Gross amt . This is a must-have dataset for anyone trying to uncover the profitability of e-commerce sales in today's marketplace
+### Overview
 
-* https://www.kaggle.com/datasets/thedevastator/unlock-profits-with-e-commerce-sales-data?select=May-2022.csv
+This platform processes simulated point-of-sale (POS) and inventory data through a complete pipeline:
 
-Data Models:
-* Products: Product ID, name, category, supplier info, price, description.
-* Customers: Customer ID, name, email, address, registration date.
-* Transaction: Transaction ID, customer ID, product ID, quantity, price, transaction date, store ID.
-* Stores: Store_id, store_name, store_size.
-* Inventory: Product ID, store ID, stock level, last updated.
-* Date Dimension: www.kimballgroup.com
-* Time-of-day dimension
+- Ingests batch data into **Google Cloud Storage** and loads into **BigQuery**
+- Applies data quality checks and transformations using **dbt**
+- Orchestrates workflows with **Airflow**
+- Exposes endpoints via a **FastAPI** microservice
+- Deploys to **GKE** with full CI/CD, observability, and infrastructure as code via **Terraform** using **Githun Actions**.
 
-<!-- https://docs.getdbt.com/blog/kimball-dimensional-model -->
+📌 **Stack**: Python · BigQuery · dbt · Airflow · FastAPI · GCP · Kubernetes · Terraform · GitHub Actions · Redis · Docker · Kafka · Grafana
 
-product
-product_category
-product_subcategory
-Customer
-Address
-country
-state
-region
-Sales
-order
-orderdetail
-paymentmmethod
-cardinformation
+---
 
+## Project Structure
 
-<: one-to-many. E.g: users.id < posts.user_id
->: many-to-one. E.g: posts.user_id > users.id
--: one-to-one. E.g: users.id - user_infos.user_id
-<>: many-to-many. E.g: authors.id <> books.id
+| Folder | Description |
+|--------|-------------|
+| [`data-ingestion/`](./data-ingestion/) | Python scripts or DAGs for ingesting simulated retail data into GCS and BigQuery |
+| [`dbt/`](./dbt/) | dbt project containing models, seeds, tests, macros and documentation |
+| [`airflow/`](./airflow/) | Airflow DAGs and configuration, including Cosmos integration |
+| [`api/`](./api/) | FastAPI service exposing endpoints for product, customer, and sales analytics |
+| [`terraform/`](./terraform/) | Infrastructure as code for provisioning GCP resources and GKE clusters |
+| [`monitoring/`](./monitoring/) | Observability setup using Prometheus, Grafana, and GCP Cloud Operations |
+| [`docs/`](./docs/) | Rendered documentation (e.g. dbt docs, architectural diagrams, OpenAPI schemas) |
+| [`scripts/`](./scripts/) | Utility scripts for testing, local development, and data simulation |
 
+---
 
+## 🔍 Project Goals
 
-# Install DBT and setup duckdb adapter
-Guide : https://docs.getdbt.com/docs/core/connect-data-platform/duckdb-setup
-    * python -m pip install dbt-core dbt-duckdb
-    * pip install pre-commit sqlfluff sqlfluff-templater-dbt
+This repository supports a structured **4-month personal development plan** focused on:
 
-    <!-- dbt-core==1.4.5
-    dbt-postgres==1.4.5
-    dbt-duckdb==1.4.1
-    sqlfluff==2.0.4
-    sqlfluff-templater-dbt==2.0.4 -->
-    * dbt init
+1. **Data Engineering Foundations** – modelling, warehousing, Airflow, BigQuery, CDC
+2. **Backend Engineering** – API design, auth, testing, caching, async processing
+3. **Software Engineering** – design patterns, system design, Kafka integration, TDD
+4. **DevOps & Cloud** – CI/CD, Terraform, Kubernetes, observability
 
+---
 
-    * dbt seed
-    * dbt test
-    * dbt unit test
-    * dbt macro
+## Component-Level Documentation
 
-    <!-- https://astronomer.github.io/astronomer-cosmos/getting_started/open-source.html -->
+Each module contains its own `README.md` with implementation-specific details and usage guides:
+
+- 📦 [`dbt/`](./dbt/) – dbt project setup with model definitions.
+- ⏱️ [`airflow/`](./airflow/) – DAG definitions, Cosmos setup
+- ⚙️ [`api/`](./api/) – FastAPI endpoints, OpenAPI, authentication
+- ☁️ [`terraform/`](./terraform/) – GCP provisioning, GKE setup
+- 📈 [`monitoring/`](./monitoring/) – Metrics scraping and dashboards
+
+---
+
+## Additional Resources
+
+- **[dbt Documentation](https://docs.getdbt.com/)** – Modelling and transformation
+- **[Astronomer Cosmos](https://astronomer.github.io/astronomer-cosmos/)** – Airflow-dbt integration
+- **[BigQuery Docs](https://cloud.google.com/bigquery/docs/)** – Serverless warehousing
+- **[FastAPI Docs](https://fastapi.tiangolo.com/)** – Modern Python web APIs
+- **[Terraform GCP Provider](https://registry.terraform.io/providers/hashicorp/google/latest/docs)** – Infrastructure provisioning
+
+---
+
+## Status
+
+🛠️ **In Progress** – Iteratively built as part of a continuous learning journey. Major components are implemented in phases and tracked via internal planning.
+
+---

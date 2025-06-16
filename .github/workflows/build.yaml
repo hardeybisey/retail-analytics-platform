@@ -1,0 +1,23 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Dummy Step 01
+        run: |
+          echo 'Testing 01'
+
+      - name: Dummy Step 02
+        run: |
+          echo 'Testing 02'

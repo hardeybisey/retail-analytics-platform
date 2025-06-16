@@ -1,0 +1,113 @@
+// Product Domain
+
+Table product {
+    id integer [primary key]
+    subcategory_id integer [ref: > subcategory.id]
+    sku_no varchar
+    name varchar
+    color varchar
+    cost_price numeric
+    list_price numeric
+    weight numeric
+    class varchar
+    product_line varchar
+    stock_level smallint
+    reorder_threshold smallint
+    created_date timestamp
+    modified_date timestamp
+}
+
+Table subcategory {
+    id integer [primary key]
+    category_id integer [ref: > category.id]
+    name varchar
+    created_date timestamp
+    modified_date timestamp
+}
+
+Table category {
+    id integer [primary key]
+    name varchar
+    created_date timestamp
+    modified_date timestamp
+}
+
+
+// Customer Domain
+Table customer {
+    id integer [primary key]
+    address_id integer [ref: - address.id]
+    title varchar
+    first_name varchar
+    middle_name varchar
+    last_name varchar
+    email varchar
+    gender varchar
+    created_date timestamp
+    modified_date timestamp
+}
+
+Table address {
+    id integer [primary key]
+    state_id integer [ref: > state.id]
+    address_line1 varchar
+    address_line2 varchar
+    city varchar
+    postal_code varchar
+    created_date timestamp
+    modified_date timestamp
+    address_type varchar [note: 'Billing, Shipping, Both']
+}
+
+Table state {
+    id integer [primary key]
+    name varchar
+    country_iso_code varchar [ref: > country.iso_code]
+    state_province_code varchar
+}
+
+ Table country {
+    iso_code varchar [primary key]
+    name varchar
+}
+
+// Transaction Domain
+Table order {
+    id integer [primary key]
+    customer_id integer [ref: > customer.id]
+    shipping_address_id integer [ref: > address.id]
+    billing_address_id integer [ref: > address.id]
+    order_date timestamp
+    modified_date timestamp
+    ship_date timestamp
+    due_date timestamp
+    credit_card_id integer [ref: > card_information.id]
+    order_total float
+    order_status varchar
+    shipping_cost float
+    tax_due float
+    total_due float
+}
+
+Table order_detail {
+    id integer [primary key]
+    order_id integer [ref: > order.id]
+    product_id integer [ref: > product.id]
+    unit_price float
+    unit_price_discount float
+    quantity integer
+    created_date timestamp
+    modified_date timestamp
+}
+
+
+Table card_information {
+    id integer [primary key]
+    customer_id integer [ref: > customer.id]
+    card_type varchar
+    card_number varchar
+    expiry_year integer
+    expiry_month integer
+    created_date timestamp
+    modified_date timestamp
+}
