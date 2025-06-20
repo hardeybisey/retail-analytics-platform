@@ -39,7 +39,7 @@ Table customer {
     address_id integer [ref: - address.id]
     title varchar
     first_name varchar
-    middle_name varchar 
+    middle_name varchar
     last_name varchar
     email varchar
     gender varchar
@@ -52,7 +52,7 @@ Table address {
     state_id integer [ref: > state.id]
     address_line1 varchar
     address_line2 varchar
-    city varchar 
+    city varchar
     postal_code varchar
     created_date timestamp
     modified_date timestamp

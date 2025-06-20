@@ -3,7 +3,7 @@ Table dim_address {
     address_id integer [primary key]
     address_line1 varchar
     address_line2 varchar
-    city varchar 
+    city varchar
     postal_code varchar
     state_province_code varchar
     country_iso_code varchar
@@ -16,7 +16,7 @@ Table dim_customer {
     customer_id integer [primary key]
     customer_address_id integer
     first_name varchar
-    middle_name varchar 
+    middle_name varchar
     last_name varchar
     email varchar
     gender varchar
@@ -67,8 +67,8 @@ Table dim_date {
 
 Table fct_transaction {
     id integer [primary key]
-    order_id integer 
-    order_detail_id integer 
+    order_id integer
+    order_detail_id integer
     date_key ineteger [ref: - dim_date.date_key]
     customer_id integer [ref: - dim_customer.customer_id]
     product_id integer [ref: - dim_product.product_id]

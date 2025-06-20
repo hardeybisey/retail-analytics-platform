@@ -7,43 +7,43 @@ from datetime import datetime
 from pathlib import Path
 
 from cosmos import DbtDag, ProfileConfig, ProjectConfig
-from cosmos.profiles import DuckDBUserPasswordProfileMapping
+from cosmos.profiles import PostgresUserPasswordProfileMapping
 
-DEFAULT_DBT_ROOT_PATH = Path(__file__).parent.parent.parent.parent / "dev/dags/dbt"
+DEFAULT_DBT_ROOT_PATH = Path(__file__).parent / "dbt/retail_analytics"
 DBT_ROOT_PATH = Path(os.getenv("DBT_ROOT_PATH", DEFAULT_DBT_ROOT_PATH))
-DBT_PROJ_DIR = DBT_ROOT_PATH / "jaffle_shop"
-DBT_PROFILE_PATH = DBT_PROJ_DIR / "profiles.yml"
-DBT_ARTIFACT = DBT_PROJ_DIR / "target"
-MANIFEST_PATH = DBT_ARTIFACT / "manifest.json"
+MANIFEST_PATH = DBT_ROOT_PATH / "target/manifest.json"
 
-project_config = ProjectConfig(
-    dbt_project_path=DBT_PROJ_DIR,
-    project_name="jaffle_shop",
-)
 
 profile_config = ProfileConfig(
     profile_name="default",
     target_name="dev",
-    profile_mapping=DuckDBUserPasswordProfileMapping(
-        conn_id="duckdb_default", disable_event_tracking=True
+    profile_mapping=PostgresUserPasswordProfileMapping(
+        conn_id="postgres_dbt_conn",
+        profile_args={
+            "schema": "public",
+            "host": "postgres_dbt",
+            "user": "dbt",
+            "password": "dbt",
+            "port": 5432,
+            "dbname": "retail_analytics",
+        },
     ),
-    # profiles_yml_filepath=DBT_PROFILE_PATH,
 )
 
-# [START local_example]
 basic_cosmos_dag = DbtDag(
-    # dbt/cosmos-specific parameters
-    project_config=project_config,
+    project_config=ProjectConfig(
+        dbt_project_path=DBT_ROOT_PATH,
+        manifest_path=MANIFEST_PATH,
+        seeds_relative_path="seeds",
+    ),
     profile_config=profile_config,
     operator_args={
-        "install_deps": True,  # install any necessary dependencies before running any dbt command
-        "full_refresh": True,  # used only in dbt commands that support this flag
+        "install_deps": True,
+        "full_refresh": True,
     },
-    # normal dag parameters
     schedule="@daily",
-    start_date=datetime(2023, 1, 1),
+    start_date=datetime(2025, 1, 2),
     catchup=False,
     dag_id="basic_cosmos_dag",
     default_args={"retries": 2},
 )
-# [END local_example]

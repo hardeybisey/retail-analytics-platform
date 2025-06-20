@@ -2,15 +2,15 @@
 
 Table product {
   id integer [primary key]
-  name varchar 
+  name varchar
   sku_no varchar
-  cost_price float 
+  cost_price float
   list_price float
   description varchar
   is_active bool
   weight float
   productline str
-  daystomanufacture 
+  daystomanufacture
   weightunitmeasurecode
   is_promoted bool
   category_id integer [ref: > product_category.id]
@@ -43,7 +43,7 @@ Table customer {
   title varchar
   first_name varchar
   middle_name varchar
-  last_name varchar 
+  last_name varchar
   email varchar
   gender varchar
   address_id integer [ref: - address.id]
@@ -90,9 +90,9 @@ Table state {
 Table order {
   id integer [primary key]
   customer_id integer [ref: > customer.id]
-  order_date timestamp 
+  order_date timestamp
   modified_date
-  ship_date 
+  ship_date
   due_date
   order_total
   shipping_cost
