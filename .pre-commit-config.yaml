@@ -7,13 +7,13 @@ repos:
         files: \.sql$
         additional_dependencies:
           - sqlfluff-templater-dbt==3.4.1
-          - dbt-duckdb==1.4.0
+          - dbt-duckdb==1.9.3
       - id: sqlfluff-fix
         args: ["--dialect", "duckdb", "--templater", "dbt"]
         files: \.sql$
         additional_dependencies:
           - sqlfluff-templater-dbt==3.4.1
-          - dbt-duckdb==1.4.0
+          - dbt-duckdb==1.9.3
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:

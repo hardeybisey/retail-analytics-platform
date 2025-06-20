@@ -6,6 +6,7 @@ select
     last_name,
     email,
     gender,
+
     customer_created_at,
     customer_updated_at
 from {{ ref('stg_customer__customer') }}
