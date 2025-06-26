@@ -2,13 +2,13 @@ version: 2
 
 sources:
   - name: sales
-    database: retail_analytics  
-    schema: sales  
+    database: retail_analytics
+    schema: seed
     tables:
       - name: order
         description: >
           "Order information table, constains one record per order"
-        columns: 
+        columns:
           - name: id
             description: integer
             tests:
@@ -69,7 +69,7 @@ sources:
       - name: order_detail
         description: >
           "Order items information table, can contain multiple record for one order"
-        columns: 
+        columns:
           - name: id
             description: integer
             tests:
@@ -85,7 +85,7 @@ sources:
               - not_null
           - name: quantity
             description: integer
-            tests: 
+            tests:
               - not_null
           - name: unit_price
             description: float
@@ -103,7 +103,7 @@ sources:
       - name: card_information
         description: >
           "Customer credit card information table"
-        columns: 
+        columns:
           - name: id
             description: integer
             tests:

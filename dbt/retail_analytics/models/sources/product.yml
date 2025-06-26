@@ -2,13 +2,13 @@ version: 2
 
 sources:
   - name: product
-    database: retail_analytics  
-    schema: product  
+    database: retail_analytics
+    schema: seed
     tables:
       - name: product
         description: >
           "Product information table"
-        columns: 
+        columns:
           - name: id
             description: integer
             tests:
@@ -58,7 +58,7 @@ sources:
       - name: category
         description: >
           "product category information table"
-        columns: 
+        columns:
           - name: id
             description: integer
             tests:
@@ -79,7 +79,7 @@ sources:
       - name: subcategory
         description: >
           "product subcategory information table"
-        columns: 
+        columns:
           - name: id
             description: integer
             tests:

@@ -1,12 +1,12 @@
-version: 2 
+version: 2
 
-seeds: 
+seeds:
   - name: card_information
-    config: 
+    config:
       full_refresh: True
       database: retail_analytics
-      schema: sales
-      column_types: 
+      schema: seed
+      column_types:
         id: integer
         customer_id: integer
         card_type: varchar
@@ -15,4 +15,3 @@ seeds:
         expiry_month: integer
         created_date: timestamp
         modified_date: timestamp
-

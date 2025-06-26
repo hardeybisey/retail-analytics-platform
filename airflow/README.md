@@ -47,6 +47,8 @@ The Astronomer CLI is maintained with love by the Astronomer team. To report a b
 
 Docs
 ====
-- https://www.astronomer.io/docs/astro/cli/run-airflow-locally
-- https://www.astronomer.io/docs/learn/airflow-dbt/
-- https://www.astronomer.io/docs/astro/cli/configure-cli?tab=astro
+- [Astro Getting started](https://www.astronomer.io/docs/astro/cli/run-airflow-locally)
+- [Getting started tutorial](https://www.astronomer.io/docs/learn/airflow-dbt/)
+- [Getting started tutorial](https://www.astronomer.io/docs/astro/cli/configure-cli?tab=astro)
+- [Cosmos Getting started](https://astronomer.github.io/astronomer-cosmos/getting_started/index.html)
+- [Event Driven Turorial](https://github.com/astronomer/external-event-driven-scheduling-example-project/)

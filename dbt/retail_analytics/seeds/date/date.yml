@@ -1,12 +1,12 @@
-version: 2 
+version: 2
 
-seeds: 
+seeds:
   - name: date
-    config: 
+    config:
       full_refresh: True
       database: retail_analytics
-      schema: date
-      column_types: 
+      schema: seed
+      column_types:
         date_key: integer
         full_date: date
         day_of_week: integer

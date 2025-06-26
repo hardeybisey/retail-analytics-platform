@@ -1,13 +1,13 @@
-version: 2 
+version: 2
 
-seeds: 
+seeds:
   - name: order
-    description: contains sales data 
-    config: 
+    description: contains sales data
+    config:
       full_refresh: True
       database: retail_analytics
-      schema: sales
-      column_types: 
+      schema: seed
+      column_types:
         id: integer
         customer_id: integer
         shipping_address_id: integer

@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: customer
-    database: retail_analytics  
-    schema: customer  
+    database: retail_analytics
+    schema: seed
     tables:
       - name: customer
         description: >
@@ -23,7 +23,7 @@ sources:
           - name: first_name
             description: varchar
           - name: middle_name
-            description: varchar 
+            description: varchar
           - name: last_name
             description: varchar
           - name: email
@@ -43,7 +43,7 @@ sources:
       - name: address
         description: >
           "Customer address table"
-        columns: 
+        columns:
           - name: id
             description: integer
             tests:
@@ -55,10 +55,10 @@ sources:
               - not_null
           - name: address_line1
             description: integer
-          - name: address_line2 
+          - name: address_line2
             description: varchar
           - name: city
-            description: varchar 
+            description: varchar
           - name: postal_code
             description: varchar
           - name: created_date
@@ -71,11 +71,11 @@ sources:
             description: varchar
             tests:
               - not_null
-            
+
       - name: state
         description: >
           "State information table"
-        columns: 
+        columns:
           - name: id
             description: integer
             tests:
@@ -91,11 +91,11 @@ sources:
             description: varchar
             tests:
               - not_null
-         
+
       - name: country
         description: >
           "Country information table"
-        columns: 
+        columns:
           - name: iso_code
             description: varchar
             tests:

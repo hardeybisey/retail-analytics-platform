@@ -2,13 +2,13 @@ version: 2
 
 sources:
   - name: date
-    database: retail_analytics  
-    schema: date  
+    database: retail_analytics
+    schema: seed
     tables:
       - name: date
         description: >
           ""
-        columns: 
+        columns:
           - name: date_key
             description: integer
           - name: full_date

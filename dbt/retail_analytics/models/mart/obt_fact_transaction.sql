@@ -30,4 +30,4 @@ from f_transaction
 left join d_product on f_transaction.product_id = d_product.product_id
 left join d_customer on f_transaction.customer_id = d_customer.customer_id
 left join d_address on f_transaction.shipping_address_id = d_address.address_id
-left join d_date on f_transaction.order_date_key = d_date.date_key
+left join d_date on f_transaction.date_key = d_date.date_key

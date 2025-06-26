@@ -6,8 +6,8 @@ select
     p.product_list_price,
     p.product_stock_level,
     p.product_reorder_threshold,
-    coalsece(c.product_category_name, "No Category") as product_category_name,
-    coalsece(s.product_subcategory_name, "No Subcategory") as product_subcategory_name,
+    product_category_name,
+    product_subcategory_name,
     p.product_created_at,
     p.product_updated_at
 from {{ ref('stg_product__product') }} as p
